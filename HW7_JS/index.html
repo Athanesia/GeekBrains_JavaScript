@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Homework 5</title>
+</head>
+
+<body>
+<p class="dropdown">Привет :)</p>
+<div class="dropdown">
+<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Dropdown button
+</button>
+<div class="menu dropdown-menu" aria-labelledby="dropdownMenuButton">
+<a class="dropdown-item" href="#">Action</a>
+<a class="dropdown-item" href="#">Another action</a>
+<a class="dropdown-item" href="#">Something else here</a>
+</div>
+</div>
+
+<script>
+    const dropdownToggleElement = document.querySelector('.dropdown-toggle');
+    dropdownToggleElement.id = 'superDropdown';
+
+    const btnElement = document.querySelector('.btn');
+    btnElement.classList.toggle('btn-secondary');
+
+    const menuElement = document.querySelector('.menu');
+    menuElement.classList.remove('dropdown-menu');
+
+    let dropdownElement = document.querySelector('.dropdown');
+
+    const dropdown = document.querySelector('.dropdown');
+    const newLink = document.createElement('a');
+    newLink.href = '#';
+    newLink.textContent = 'link';
+
+    dropdown.insertAdjacentElement('afterend', newLink);
+
+
+    const dropdownButton = document.getElementById('dropdownMenuButton');
+    dropdownButton.id = 'superDropdown';
+
+    const elementWithAriaLabelledBy = document.querySelector('[aria-labelledby="dropdownMenuButton"]');
+    elementWithAriaLabelledBy.dataset.dd = 3;
+
+    const dropdownToggleElement = document.querySelector('.dropdown-toggle');
+    dropdownToggleElement.removeAttribute('type');
+</script>
+
+</body>
+
+</html>
