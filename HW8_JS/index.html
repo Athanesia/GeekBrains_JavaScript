@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Homework 5</title>
+</head>
+
+<body>
+    <input id="from" type="text">
+    В инпуте написано: <span></span>
+    
+    <br>
+    
+    <button class="messageBtn">Показать блок</button>
+    <div class="message">
+      Привет :)
+    </div>
+    
+    <br>
+    
+    <form>
+      <label>
+        Первый инпут:
+        <input class="form-control" type="text">
+      </label>
+      <br>
+      <br>
+      <label>
+        Второй инпут:
+        <select class="form-control">
+          <option value=""></option>
+          <option value="1">Один</option>
+          <option value="2">Два</option>
+        </select>
+      </label>
+      <br>
+      <br>
+      <button>Отправить</button>
+    </form>
+
+<script>
+    const inputFrom = document.getElementById('from');
+    const spanValue = document.querySelector('span');
+
+    inputFrom.addEventListener('input', function (event) {
+        spanValue.textContent = event.target.value;
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.messageBtn').addEventListener('click', function() {
+        const messageElement = document.querySelector('.message');
+        
+        messageElement.classList.add('animate_animated', 'animate_fadeInLeftBig');
+        messageElement.style.visibility = 'visible';
+    });
+});
+
+const form = document.querySelector('form');
+const formFields = Array.from(form.querySelectorAll('input, select, textarea'));
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const allFieldsFilled = !formFields.some(field => {
+        const isEmpty = field.value.trim() === '';
+        field.classList.toggle('error', isEmpty);
+        return isEmpty;
+    });
+    
+    console.log(allFieldsFilled ? 'Форма отправлена' : 'Заполните все поля');
+});
+
+formFields.forEach(field => {
+    field.addEventListener('input', function() {
+        const isEmpty = this.value.trim() === '';
+        this.classList.toggle('error', isEmpty);
+    });
+});
+</script>
+
+</body>
+
+</html>
