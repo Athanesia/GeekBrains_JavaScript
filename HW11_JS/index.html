@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="heading center">
+      <header class="block_text">
+          <h3 class="caption">Featured Items</h3>
+          <p class="slogan">Shop for items based on what we featured in this week</p>
+      </header>
+      <section class="items-content center" id="productsContainer">
+      </section>
+  </main>
+
+  <template id="productTemplate">
+      <div class="item">
+          <img class="product-image" src="" alt="Product Image">
+          <h4 class="subject"></h4>
+          <p class="desc"></p>
+          <p class="price"></p>
+      </div>
+  </template>
+
+  <script type="module" src="data.js"></script>
+  <script type="module" src="./products.js"></script>
+</body>
+
+</html>
